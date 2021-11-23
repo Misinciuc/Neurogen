@@ -165,38 +165,47 @@
   </div>
   <section class="apointment">
     <div class="form__wrapper">
-      <form class="form">
+      <form class="form" id="form-med">
         <h2 class="form__title form__title-pos form__title-color">Programează-te ONLINE la medicul tău !</h2>
         <h4 class="form__subtitle">După completarea formularului, veți primi un apel de confirmare.</h4>
         <div class="input">
           <div class="input__column input__column-space">
             <div class="input__name input__cont">
               <label for="name" class="input__label input__label-require">Nume</label>
-              <input type="text" name="name" id="name" class="input__field" placeholder="Lupu">
+              <input type="text" name="name" id="name" class="input__field required surname" placeholder="Lupu">
+              <p class="error__message error__message-surname">Error message</p>
             </div>
             <div class="input__surname input__cont">
               <label for="surname" class="input__label input__label-require">Prenume</label>
-              <input type="text" name="surname" id="surname" class="input__field" placeholder="Vasile">
+              <input type="text" name="surname" id="surname" class="input__field required name" placeholder="Vasile">
+              <p class="error__message error__message-name">Error message</p>
             </div>
           </div>
           <div class="input__column">
             <div class="input__date input__cont">
               <label for="date" class="input__label">Data programarii</label>
-              <input type="date" name="date" id="date" class="input__field">
+              <input placeholder="28/10/2021" class="input__field required date" type="text"
+                onfocus="(this.type='date')" onblur="(this.type='date')" />
+              <p class="error__message error__message-date">Error message</p>
             </div>
             <div class="input__hour input__cont">
               <label for="hour" class="input__label">Ora programarii</label>
-              <input type="time" name="time" id="time" class="input__field" placeholder="16 : 18">
+              <input placeholder="16 : 20" class="input__field required hour" type="text" onfocus="(this.type='time')"
+                onblur="(this.type='text')" />
+              <p class="error__message error__message-hour">Error message</p>
             </div>
           </div>
           <div class="input__column">
             <div class="input__phone input__cont">
               <label for="phone" class="input__label">Numar de contacts</label>
-              <input type="tel" name="phone" id="phone" class="input__field" placeholder="06545654">
+              <input type="number" name="phone" id="phone" class="input__field required phone" placeholder="068751925">
+              <p class="error__message error__message-phone">Error message</p>
             </div>
             <div class="input__email input__cont">
               <label for="email" class="input__label">Email</label>
-              <input type="text" name="email" id="email" class="input__field" placeholder="example@gmail.com">
+              <input type="text" name="email" id="email" class="input__field required email"
+                placeholder="example@gmail.com">
+              <p class="error__message error__message-email">Error message</p>
             </div>
           </div>
         </div>
@@ -325,7 +334,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script src="/src/js/script.js"></script>
+  <script src="/src/js/validmed.js"></script>
 </body>
 
 </html>

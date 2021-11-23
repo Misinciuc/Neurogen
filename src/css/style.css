@@ -555,10 +555,15 @@ img {
   background-color: rgba(67, 99, 177, 0.1);
 }
 .header .wrapper .navigation .navigation__item-drop:hover .dropdown__title::after {
+  transform: rotate(-40deg);
   background-color: white;
+}
+.header .wrapper .navigation .navigation__item-drop:hover .dropdown__title {
+  color: white;
 }
 .header .wrapper .navigation .navigation__item-drop:hover .dropdown__title::before {
   background-color: white;
+  transform: rotate(40deg);
 }
 .header .wrapper .navigation__phone {
   flex-shrink: 0;
@@ -2554,7 +2559,7 @@ img {
   margin-bottom: 5px;
 }
 .apointment .form__wrapper .form__subtitle {
-  padding-bottom: 10%;
+  padding-bottom: 6%;
   padding-top: 1%;
 }
 .location {
@@ -3781,4 +3786,32 @@ img {
   border: 1px solid #4363b1;
   position: absolute;
   right: 70px;
+}
+/* CLASESS FOR VALIDATION */
+.error__message {
+  font-size: 12px;
+  margin-top: -25px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  color: red;
+  visibility: hidden;
+}
+.error__message-show {
+  font-size: 12px;
+  color: red;
+  visibility: visible;
+}
+#phone::-webkit-inner-spin-button,
+#phone::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+.error__border {
+  box-shadow: inset 0px 0px 4px 1px rgba(255, 0, 0, 0.918);
+  border: 1px solid rgba(255, 0, 0, 0.712);
+}
+.succes__border {
+  box-shadow: inset 0px 0px 4px 1px rgba(4, 105, 17, 0.918);
+  border: 1px solid rgba(48, 185, 71, 0.712);
 }
