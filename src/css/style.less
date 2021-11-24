@@ -55,6 +55,11 @@ img {
 .reset();
 
 .header {
+  position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 89;
+  
   .header-top {
     background-color: @blue;
     .wrapper {
@@ -112,6 +117,7 @@ img {
         display: flex;
         width: 27px;
         padding: 10px 0px;
+
         //height: 20px;
 
         &__text {
@@ -144,6 +150,7 @@ img {
           height: 20px;
           background-size: contain;
           cursor: pointer;
+
         }
 
         &__link-ru {
@@ -224,10 +231,10 @@ img {
       });
 
       &__logo {
-        max-width: 155px;
+        max-width: 145px;
         padding: 5px 0px;
         .xl-block({
-          max-width: 120px;
+          max-width: 110px;
         });
       }
 
@@ -276,10 +283,6 @@ img {
         font-size: 16px;
         font-weight: 500;
         padding: 12px 0px;
-      }
-
-      &__item-minus {
-        //margin-right: -20px;
       }
 
       &__item-drop {
@@ -422,8 +425,8 @@ img {
       &__tel {
         //position: relative;
         display: inline-block;
-        color: @gray;
-        font-size: 18px;
+        color: #000A24;
+        font-size: 20px;
         font-weight: 900;
         .xl(display, none);
       }
@@ -460,6 +463,7 @@ img {
           transform: rotate(40deg);
           left: 0px;
           top: 10px;
+          
         }
         &__item::after {
           transform: rotate(-40deg);
@@ -492,10 +496,11 @@ img {
     .burgher::after,
     .burgher::before {
       content: "";
+      position: absolute;
+      z-index: 99999;
       background-color: black;
       width: 20px;
       height: 2px;
-      position: absolute;
     }
     .burgher-line::before {
       content: "";
@@ -508,12 +513,14 @@ img {
     }
 
     .burgher-line-x::before {
+      z-index: 99;
       transform: rotate(-44deg);
       background-color: white;
       width: 25px;
       top: -10px;
       height: 3px;
-      transition: 0.5s;
+      transition: 0.7s;
+
     }
 
     .burgher::after {
@@ -535,7 +542,7 @@ img {
       top: -10px;
       width: 25px;
       height: 3px;
-      transition: 0.5s;
+      transition: 0.7s;
     }
 
     .burgher-menu {
@@ -547,8 +554,8 @@ img {
 .navigation-mobile {
   background-color: white;
   position: fixed;
-  z-index: 999;
-  top: 0;
+  z-index: 90;
+  top: 0px;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -571,6 +578,11 @@ img {
   .menu {
     &__head {
       background-color: @blue;
+      position: relative;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     &__txt {
@@ -578,6 +590,31 @@ img {
       text-transform: uppercase;
       color: white;
     }
+
+    &__close{
+      margin-right: 20px;
+    }
+
+    &__close::after{
+      content: "";
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      width: 20px;
+      height: 3px;
+      transform: rotate(-40deg);
+      right: 18px;
+    }
+
+    &__close::before{
+      content: "";
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      width: 20px;
+      height: 3px;
+      right: 18px;
+      transform: rotate(40deg);
+    }
+
     &__list {
       padding-left: 10%;
       padding-top: 10%;
@@ -734,11 +771,11 @@ img {
     background-size: cover;
     .xl-block({
       //background-size: contain;
-      background-position: bottom center;
+      background-position: center center;
     });
     .lg-block({
       //background-size: contain;
-      background-position: right center;
+      background-position: center center;
     });
     .md-block({
       //background-size: contain;
@@ -1221,7 +1258,7 @@ img {
       .row-flex();
       flex-wrap: nowrap;
       justify-content: space-between;
-      .xl-block({
+      .md-block({
         flex-wrap: wrap;
         justify-content: center;
       });
@@ -1279,8 +1316,8 @@ img {
         .col();
         .size(6);
 
-        .xl-block({
-          .size(12);
+        .lg-block({
+          .size(7);
           margin-top: 25px;
           margin-left: 0px;
         });
@@ -1290,6 +1327,11 @@ img {
         .right-row-img {
           min-height: 670px;
         }
+        .md-block({ 
+          max-width: 650px;
+          justify-content: center;
+          .size(12);
+        });
       }
     }
   }
@@ -1304,9 +1346,10 @@ img {
       .faq {
         order: 1;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        padding: 10% 0px 10% 35px;
+        padding: 3% 0px 3% 35px;
         .xs-block({
           border: none;
+          padding: 0px 0px 0px 15px;
         });
         //max-width: 779px;
 
@@ -1393,11 +1436,16 @@ img {
         }
 
         .panel {
-          padding: 0 30px;
+          padding: 0 70px;
           font-size: 14px;
+          line-height: 25px;
           background-color: white;
+          color: #00000099;
           display: none;
           overflow: hidden;
+          .xs-block({
+            padding: 0 11%;
+          });
         }
       }
       .question {
@@ -1510,15 +1558,15 @@ img {
       .lg-block({
         flex-direction: column;
       });
+     
 
       .doctor__pics {
         min-width: 100%;
-        min-height: 100%;
+        height: 100%;
         object-fit: cover;
       }
 
       &__img {
-        //min-width: 200px;
         min-height: 397px;
         min-width: 338px;
         order: 1;
@@ -1636,21 +1684,26 @@ img {
       display: flex;
       flex-direction: column;
       });
+      .xs-block({
+        min-width: 320px;
+      });
 
       .contacts-footer {
         position: absolute;
-        top: 15%;
-        left: 10%;
+        top: 18%;
+        left: 15%;
         min-width: 350px;
-        z-index: 5200;
+        z-index: 70;
         order: 1;
         .sm-block({
           margin-top: 40px;
-          position: static;
+          position: relative;
           order: 4;
+          left: -10%;
         });
         .xs-block({
           min-width: 320px;
+          left: -3%;
         });
       }
       .maps {
@@ -1766,10 +1819,10 @@ img {
       }
 
       .made {
-        order: 0;
+        //order: 0;
         margin-right: 10px;
         //.col();
-        .xs-block({
+        .sm-block({
           //.size(12);
           order: 3;
           max-width: 210px;
@@ -1782,27 +1835,47 @@ img {
         });
       }
       .neurogen__comp {
-        order: 0;
+        //order: 0;
         margin-right: 10px;
         //.col();
+        .sm-block({
+          order: 1;
+          min-width: 210px; 
+        });
+        .xs-block({
+          min-width: 100px; 
+          //font-size: 12px;
+        });
         .xxs-block({
           font-size: 12px;
         });
       }
       .neurogen__privacy {
-        order: 3;
+        //order: 3;
         //.col();
         color: #000a24;
         margin-right: 10px;
+        .sm-block({
+          order: 2;
+          min-width: 200px; 
+        });
+        .xs-block({
+          //font-size: 12px;
+          min-width: 100px; 
+        });
         .xxs-block({
           font-size: 12px;
         });
       }
 
       .faq__footer {
-        order: 4;
+        //order: 4;
         color: #000a24;
-        .xs(order, 5);
+        .sm-block({
+          order: 4;
+          //min-width: 200px; 
+
+        });
         //.col();
       }
     }
@@ -2154,6 +2227,13 @@ img {
             });
         }
 
+        &-3{
+          .xs-block({
+            margin-top: 20px;
+            margin-bottom: 20px;
+          });
+        }
+
         &__text {
           padding: 10px 0px;
           font-size: 20px;
@@ -2163,6 +2243,9 @@ img {
           position: relative;
           left: -30px;
           //top: 10px;
+          .xs-block({
+            font-size: 16px;
+            });
         }
 
         &__text-big {
@@ -2174,15 +2257,24 @@ img {
           line-height: 28px;
           top: 2px;
           left: -25px;
+          .xs-block({
+            top: -5px;
+            left: -5px;
+          });
           .xxs-block({
-            top: 16px;
+            top: 6px;
             left: -5px;
           });
         }
         &__text-2 {
           left: -25px;
           line-height: 28px;
+          .xs-block({
+            top: -20px;
+            left: -5px;
+          });
           .xxs-block({
+            padding: 0px;
             top: -8px;
           left: -5px;
           });
@@ -2190,12 +2282,12 @@ img {
         &__text-3 {
           left: -25px;
           line-height: 28px;
-
           .xs-block({
-            top: 18px;
+            top: 8px;
+            left: -5px;
           });
           .xxs-block({
-            top: 32px;
+            top: 25px;
             left: -5px;
           });
         }
@@ -2203,26 +2295,44 @@ img {
           left: -25px;
           line-height: 28px;
           top: -8px;
-          .xxs-block({
-            top: 6px;
+          .xs-block({
             left: -5px;
+            top: -6px;
+          });
+          .xxs-block({
+            top: -7px;
+            left: -5px;
+            padding: 0px;
+
           });
         }
         &__text-5 {
           left: -25px;
           line-height: 28px;
           top: 6px;
-          .xxs-block({
+          .xs-block({
             left: -5px;
+            top: -6px;
+          });
+          .xxs-block({
+            top: 10px;
+            left: -5px;
+            padding: 0px;
+
           });
         }
         &__text-6 {
           left: -25px;
           line-height: 28px;
           top: 0px;
-          .xxs-block({
-            top: 32px;
+          .xs-block({
+            top: 8px;
             left: -5px;
+          });
+          .xxs-block({
+            top: 15px;
+            left: -5px;
+            line-height: 25px;
           });
         }
       }

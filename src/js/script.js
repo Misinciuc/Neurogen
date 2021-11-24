@@ -1,14 +1,17 @@
 /* Mobile menu */
 let mobBurgher = document.querySelector(".burgher");
 
-mobBurgher.addEventListener("click", function () {
+mobBurgher.addEventListener("click", function animMob() {
   console.log("fine");
   let navMob = document.querySelector(".navigation-mobile");
   let burgLine = document.querySelector(".burgher-line");
   mobBurgher.classList.toggle("burgher-x");
   burgLine.classList.toggle("burgher-line-x");
   navMob.classList.toggle("navigation-mobile-active");
+  document.querySelector('.menu__close').onclick = animMob;
 });
+
+ 
 
 /* Language select */
 
@@ -19,7 +22,7 @@ $(".language__list").on("click", ".language__item-init", function () {
     .toggle();
   $(".language__list")
     .children("li:not(.language__item-init)")
-    .css("margin-top", "14px");
+    .css("margin-top", "10px");
   $(".language").toggleClass("arrow_anim");
 });
 
